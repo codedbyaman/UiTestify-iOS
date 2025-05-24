@@ -2,7 +2,8 @@
 
 **UITestify** is a lightweight iOS application designed to help developers and QA engineers learn and practice writing UI tests using **XCUITest**. This app mimics a real-world quiz flow with multiple UI components, timers, and result tracking — making it ideal for practicing test case design, accessibility usage, and automation strategies.
 
----
+## 🎥 Demo
+https://github.com/user-attachments/assets/f3c3add9-d39b-4116-980d-f861bc7d646a
 
 ## 🚀 Features
 
