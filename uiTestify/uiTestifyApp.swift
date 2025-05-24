@@ -8,12 +8,14 @@
 import SwiftUI
 
 @main
-struct uiTestifyApp: App {
+struct UiTestifyApp: App {
+    @StateObject private var themeManager = ThemeManager()
+
     var body: some Scene {
         WindowGroup {
-            //ContentView()
             HomeView()
+                .environmentObject(themeManager)
+                .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
         }
     }
 }
-

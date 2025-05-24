@@ -1,10 +1,3 @@
-//
-//  TestModule.swift
-//  uiTestify
-//
-//  Created by Aman Kumar on 24/05/25.
-//
-
 import SwiftUI
 
 enum TestModuleCategory: String, CaseIterable {
@@ -23,34 +16,32 @@ struct TestModule: Identifiable {
     let category: TestModuleCategory
 
     static let all: [TestModule] = [
-        .init("Gesture Playground", icon: "hand.tap", color: .blue, destination: GesturePlaygroundView(), category: .ui),
-        .init("Animation Showcase", icon: "sparkles", color: .purple, destination: AnimationShowcaseView(), category: .ui),
-        .init("Form Testing", icon: "rectangle.and.pencil.and.ellipsis", color: .indigo, destination: FormTestingView(), category: .ui),
-        .init("List Interaction", icon: "list.bullet.rectangle", color: .teal, destination: ListInteractionView(), category: .ui),
-        .init("Dialogs & Sheets", icon: "square.and.pencil", color: .orange, destination: DialogAndSheetTestView(), category: .ui),
-        .init("Keyboard & Focus", icon: "keyboard", color: .pink, destination: KeyboardFocusTestView(), category: .ui),
-        .init("Gesture Conflicts", icon: "rectangle.3.offgrid", color: .cyan, destination: GestureConflictTestView(), category: .ui),
+        TestModule("Gesture Playground", icon: "hand.tap", color: .blue, destination: AnyView(GesturePlaygroundView()), category: .ui),
+        TestModule("Animation Showcase", icon: "sparkles", color: .purple, destination: AnyView(AnimationShowcaseView()), category: .ui),
+        TestModule("Form Testing", icon: "rectangle.and.pencil.and.ellipsis", color: .indigo, destination: AnyView(FormTestingView()), category: .ui),
+        TestModule("List Interaction", icon: "list.bullet.rectangle", color: .teal, destination: AnyView(ListInteractionView()), category: .ui),
+        TestModule("Dialogs & Sheets", icon: "square.and.pencil", color: .orange, destination: AnyView(DialogAndSheetTestView()), category: .ui),
+        TestModule("Keyboard & Focus", icon: "keyboard", color: .pink, destination: AnyView(KeyboardFocusTestView()), category: .ui),
+        TestModule("Gesture Conflicts", icon: "rectangle.3.offgrid", color: .cyan, destination: AnyView(GestureConflictTestView()), category: .ui),
 
-        .init("Network State", icon: "network", color: .green, destination: NetworkStateView(), category: .async),
-        .init("Async & Loading", icon: "clock.arrow.circlepath", color: .mint, destination: AsyncLoadingTestView(), category: .async),
-        .init("Load Test (1000+)", icon: "speedometer", color: .red, destination: PerformanceLoadTestView(), category: .async),
+        TestModule("Network State", icon: "network", color: .green, destination: AnyView(NetworkStateView()), category: .async),
+        TestModule("Async & Loading", icon: "clock.arrow.circlepath", color: .mint, destination: AnyView(AsyncLoadingTestView()), category: .async),
+        TestModule("Load Test (1000+)", icon: "speedometer", color: .red, destination: AnyView(PerformanceLoadTestView()), category: .async),
 
-        .init("Navigation Flow", icon: "arrow.triangle.branch", color: .brown, destination: NavigationFlowTestView(), category: .navigation),
+        TestModule("Navigation Flow", icon: "arrow.triangle.branch", color: .brown, destination: AnyView(NavigationFlowTestView()), category: .navigation),
 
-        .init("Accessibility Test", icon: "figure.wave", color: .gray, destination: AccessibilityTestingView(), category: .accessibility),
-        
-        .init("Tab Bar Behavior", icon: "square.grid.3x1.below.line.grid.1x2", color: .yellow, destination: TabBarBehaviorTestView(), category: .ui),
-        
-        .init("Form Wizard", icon: "rectangle.stack.person.crop", color: .blue, destination: FormWizardTestView(), category: .ui)
+        TestModule("Accessibility Test", icon: "figure.wave", color: .gray, destination: AnyView(AccessibilityTestingView()), category: .accessibility),
 
-        
+        TestModule("Tab Bar Behavior", icon: "square.grid.3x1.below.line.grid.1x2", color: .yellow, destination: AnyView(TabBarBehaviorTestView()), category: .ui),
+
+        TestModule("Form Wizard", icon: "rectangle.stack.person.crop", color: .blue, destination: AnyView(FormWizardTestView()), category: .ui)
     ]
 
-    init<Destination: View>(_ title: String, icon: String, color: Color, destination: Destination, category: TestModuleCategory) {
+    init(_ title: String, icon: String, color: Color, destination: AnyView, category: TestModuleCategory) {
         self.title = title
         self.icon = icon
         self.color = color
-        self.destination = AnyView(destination)
+        self.destination = destination
         self.category = category
     }
 }
