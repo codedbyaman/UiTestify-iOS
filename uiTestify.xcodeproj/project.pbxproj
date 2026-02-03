@@ -182,6 +182,7 @@
 					};
 					070C7BEA2DE1EBD300187B10 = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 2620;
 						TestTargetID = 070C7BD32DE1EBD100187B10;
 					};
 				};
@@ -489,6 +490,7 @@
 		070C7BFC2DE1EBD300187B10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6YK335L86V;
@@ -497,6 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = a4aman.uiTestifyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = uiTestify;
@@ -506,6 +509,7 @@
 		070C7BFD2DE1EBD300187B10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6YK335L86V;
