@@ -13,5 +13,8 @@ class HomeElements{
         self.app = app
     }
     
+    var title: XCUIElement {
+        app.staticTexts[AccessibilityIds.HomeView.homeViewTitle]
+    }
     
 }

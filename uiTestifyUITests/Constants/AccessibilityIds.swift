@@ -6,7 +6,7 @@
 //
 struct AccessibilityIds {
     struct HomeView {
-        static let title = "UiTestify Dashboard"
+        static let homeViewTitle = "UiTestify Dashboard"
         static let userName = "Hi, Test User!"
         static let darkModeToggle = "Dark Mode"
         static let AutoRefreshToggle = "Auto Refresh"

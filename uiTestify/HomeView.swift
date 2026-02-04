@@ -35,11 +35,11 @@ struct HomeView: View {
 
                             VStack(alignment: .leading) {
                                 Text("Hi, Test User!")
-                                    .accessibilityIdentifier("greeting_text")
+                                    .accessibilityIdentifier("home_page_greeting_text")
                                     .font(.title2).bold()
                                     .foregroundColor(.white)
                                 Text("UI Testing Playground")
-                                    .accessibilityIdentifier("dashboard_subtitle_text")
+                                    .accessibilityIdentifier("home_page_subtitle_text")
                                     .font(.subheadline)
                                     .foregroundColor(.white.opacity(0.7))
                             }
@@ -53,12 +53,12 @@ struct HomeView: View {
                             Toggle("Dark Mode", isOn: $themeManager.isDarkMode)
                                 .toggleStyle(SwitchToggleStyle(tint: Color.primary(forDarkMode: themeManager.isDarkMode)))
                                 .foregroundColor(.white)
-                                .accessibilityIdentifier("DarkModeToggle")
+                                .accessibilityIdentifier("home_page_dark_mode_toggle")
 
                             Toggle("Auto Refresh", isOn: $autoRefresh)
                                 .toggleStyle(SwitchToggleStyle(tint: Color.primary(forDarkMode: themeManager.isDarkMode)))
                                 .foregroundColor(.white)
-                                .accessibilityIdentifier("AutoRefreshToggle")
+                                .accessibilityIdentifier("home_page_auto_refresh_toggle")
                         }
                         .padding()
                         .background(Color.white.opacity(0.1))
@@ -71,7 +71,7 @@ struct HomeView: View {
                         .background(Color.white.opacity(0.15))
                         .cornerRadius(10)
                         .foregroundColor(.white)
-                        .accessibilityIdentifier("SearchBar")
+                        .accessibilityIdentifier("home_page_searchBar")
 
                     // Scrollable test modules
                     GeometryReader { geometry in
@@ -83,7 +83,6 @@ struct HomeView: View {
                                     if !sectionModules.isEmpty {
                                         AnimatedCategoryHeader(title: category.rawValue)
                                             .accessibilityIdentifier("dashboard_category_\(category.rawValue.lowercased())")
-
 
                                         ForEach(sectionModules) { module in
                                             NavigationLink(destination: module.destination) {
@@ -110,7 +109,7 @@ struct HomeView: View {
                 .padding()
             }
             .navigationTitle("UiTestify Dashboard")
-            .accessibilityIdentifier("dashboard_title_text")
+            .accessibilityIdentifier("home_page_title_text")
         }
         .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
     }
