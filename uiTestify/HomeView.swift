@@ -35,9 +35,11 @@ struct HomeView: View {
 
                             VStack(alignment: .leading) {
                                 Text("Hi, Test User!")
+                                    .accessibilityIdentifier("greeting_text")
                                     .font(.title2).bold()
                                     .foregroundColor(.white)
                                 Text("UI Testing Playground")
+                                    .accessibilityIdentifier("dashboard_subtitle_text")
                                     .font(.subheadline)
                                     .foregroundColor(.white.opacity(0.7))
                             }
@@ -80,6 +82,8 @@ struct HomeView: View {
 
                                     if !sectionModules.isEmpty {
                                         AnimatedCategoryHeader(title: category.rawValue)
+                                            .accessibilityIdentifier("dashboard_category_\(category.rawValue.lowercased())")
+
 
                                         ForEach(sectionModules) { module in
                                             NavigationLink(destination: module.destination) {
@@ -89,6 +93,8 @@ struct HomeView: View {
                                                     .background(Color.white.opacity(0.15))
                                                     .foregroundColor(.white)
                                                     .cornerRadius(10)
+                                                    .accessibilityIdentifier("dashboard_\(module.title.replacingOccurrences(of: " ", with: "_").lowercased())_button")
+
                                             }
                                         }
                                     }
@@ -104,6 +110,7 @@ struct HomeView: View {
                 .padding()
             }
             .navigationTitle("UiTestify Dashboard")
+            .accessibilityIdentifier("dashboard_title_text")
         }
         .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
     }
