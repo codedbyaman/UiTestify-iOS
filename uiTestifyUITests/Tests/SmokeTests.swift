@@ -9,9 +9,8 @@ import XCTest
 
 class SmokeTests: BaseTest {
 
-    func test_appLaunchSuccessfully(){
-                // this test will pass and app will visibly open
-                XCTAssertTrue(app.state == .runningForeground)
-        sleep(5)
+    func test_appLaunchSuccessfully() {
+        let home = HomeScreen(app: app)
+        home.assertions.verifyTitleVisible()
     }
 }
