@@ -27,6 +27,7 @@
 		070C7BD42DE1EBD100187B10 /* uiTestify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uiTestify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C7BE12DE1EBD300187B10 /* uiTestifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTestifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C7BEB2DE1EBD300187B10 /* uiTestifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTestifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0787DB2A2F71321F00699225 /* uiTestify.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = uiTestify.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +76,7 @@
 		070C7BCB2DE1EBD100187B10 = {
 			isa = PBXGroup;
 			children = (
+				0787DB2A2F71321F00699225 /* uiTestify.xctestplan */,
 				070C7BD62DE1EBD100187B10 /* uiTestify */,
 				070C7BE42DE1EBD300187B10 /* uiTestifyTests */,
 				070C7BEE2DE1EBD300187B10 /* uiTestifyUITests */,
